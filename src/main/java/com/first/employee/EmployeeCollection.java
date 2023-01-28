@@ -22,7 +22,7 @@ public class EmployeeCollection {
     private void populateEmployeeCollection() {
         EmployeeDatabaseConnection db = EmployeeDatabaseConnection.getInstance();
 //        Connection connection = db.getConnection();
-        System.out.println("Database has been successfully connected!");
+//        System.out.println("Database has been successfully connected!");
 
         this.employees = (ArrayList<Employee>) db.getResults();
     }

@@ -1,9 +1,6 @@
 package com.first.employee;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,10 +62,14 @@ final class EmployeeDatabaseConnection<E> {
 
             ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM employee");
             while (resultSet.next()) {
+                Date join_date = (java.sql.Date) resultSet.getObject("join_date");
+                Date date_of_birth = (java.sql.Date) resultSet.getObject(5);
+
                 Employee employee = new Employee(resultSet.getString(1),
                         resultSet.getString(2),
-                        resultSet.getObject(4, LocalDate.class),
-                        resultSet.getObject(5, LocalDate.class));
+                        join_date.toLocalDate(),
+                        date_of_birth.toLocalDate());
+
                 results.add(employee);
             }
         }
