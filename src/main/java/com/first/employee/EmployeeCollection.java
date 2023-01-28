@@ -27,4 +27,7 @@ public class EmployeeCollection {
         this.employees = (ArrayList<Employee>) db.getResults();
     }
 
+    public ArrayList<Employee> getEmployees() {
+        return employees;
+    }
 }
