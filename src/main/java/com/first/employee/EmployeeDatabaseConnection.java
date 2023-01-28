@@ -25,7 +25,7 @@ final class EmployeeDatabaseConnection<E> {
         rs = null;
         this.results = new ArrayList<Employee>();
         System.out.println("Loading Driver...");
-        attemptConnection();
+//        attemptConnection();
         populateEmployeeCollection();
      }
 
@@ -59,16 +59,12 @@ final class EmployeeDatabaseConnection<E> {
 
 
     private void populateEmployeeCollection() {
-        ResultSet resultSetB;
         try {
-            EmployeeDatabaseConnection db = EmployeeDatabaseConnection.getInstance();
-            Connection connection = db.getConnection();
+            Connection connection = DriverManager.getConnection(urlDBConnection, username, password);
             System.out.println("Database has been successfully connected!");
 
             ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM employee");
-            resultSetB = resultSet;
             while (resultSet.next()) {
-                resultSet = connection.createStatement().executeQuery("SELECT * FROM employee");
                 Employee employee = new Employee(resultSet.getString(1),
                         resultSet.getString(2),
                         resultSet.getObject(4, LocalDate.class),
