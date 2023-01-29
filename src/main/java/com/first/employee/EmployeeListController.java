@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeListController {
-    @FXML private ListView<Employee> listEmployees;
+    @FXML private ListView<String> listEmployeesName;
+    @FXML private ListView<String> listEmployeesRole;
+    @FXML private ListView<LocalDate> listEmployeesJoinDate;
 
     @FXML public void onClose() {
         System.exit(0);
@@ -18,11 +20,32 @@ public class EmployeeListController {
     @FXML public void btnLoadOnClick() {
         EmployeeCollection ec = new EmployeeCollection();
 
-        listEmployees.setItems(FXCollections.observableList(ec.getEmployees()));
-        listEmployees.setEditable(false);
-        listEmployees.setVisible(true);
+        List<String> name = new ArrayList<>();
+        for(Employee employee : ec.getEmployees()) {
+            name.add(employee.getName());
+        }
 
+        listEmployeesName.setItems(FXCollections.observableList(name));
+        listEmployeesName.setEditable(false);
+        listEmployeesName.setVisible(true);
 
+        List<String> role = new ArrayList<>();
+        for(Employee employee : ec.getEmployees()) {
+            role.add(employee.getRole());
+        }
+
+        listEmployeesRole.setItems(FXCollections.observableList(role));
+        listEmployeesRole.setEditable(false);
+        listEmployeesRole.setVisible(true);
+
+        List<LocalDate> join_date = new ArrayList<>();
+        for(Employee employee : ec.getEmployees()) {
+            join_date.add(employee.getJoin_date());
+        }
+
+        listEmployeesJoinDate.setItems(FXCollections.observableList(join_date));
+        listEmployeesJoinDate.setEditable(false);
+        listEmployeesJoinDate.setVisible(true);
     }
 
 }

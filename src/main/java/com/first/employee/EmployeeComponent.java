@@ -14,11 +14,11 @@ public class EmployeeComponent extends Application {
     public void start(Stage stage) {
         try {
             FXMLLoader l = new FXMLLoader();
-            l.setLocation(EmployeeComponent.class.getResource("/com.first.employee/employee.fxml"));
+            l.setLocation(EmployeeComponent.class.getResource("/com.first.employee/employee1.fxml"));
 //            l.setController(new EmployeeListController());
             VBox root = l.load();
 
-            Scene scene = new Scene(root, 500,300);
+            Scene scene = new Scene(root, 750,300);
             stage.setScene(scene);
             stage.setTitle("List Employees");
             stage.setResizable(false);
