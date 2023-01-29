@@ -18,7 +18,6 @@ public class EmployeeListController {
     @FXML public void btnLoadOnClick() {
         EmployeeCollection ec = new EmployeeCollection();
 
-        listEmployees = new ListView<>(FXCollections.observableList(ec.getEmployees()));
         listEmployees.setItems(FXCollections.observableList(ec.getEmployees()));
         listEmployees.setEditable(false);
         listEmployees.setVisible(true);
