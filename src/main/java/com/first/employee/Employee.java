@@ -38,4 +38,8 @@ public class Employee {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public String toString() {
+        return "Name: " + getName() + "\tRole: " + getRole() + "\tJoined Us Since: " + getJoin_date() + "\tDOB: " + getDate_of_birth();
+    }
 }

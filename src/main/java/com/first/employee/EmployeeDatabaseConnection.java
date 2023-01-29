@@ -65,8 +65,8 @@ final class EmployeeDatabaseConnection<E> {
                 Date join_date = (java.sql.Date) resultSet.getObject("join_date");
                 Date date_of_birth = (java.sql.Date) resultSet.getObject(5);
 
-                Employee employee = new Employee(resultSet.getString(1),
-                        resultSet.getString(2),
+                Employee employee = new Employee(resultSet.getString(2),
+                        resultSet.getString(3),
                         join_date.toLocalDate(),
                         date_of_birth.toLocalDate());
 
