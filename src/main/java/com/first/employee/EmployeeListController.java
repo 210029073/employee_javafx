@@ -3,12 +3,14 @@ package com.first.employee;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeListController {
+    @FXML private TextField txtSearchBar;
     @FXML private ListView<String> listEmployeesName;
     @FXML private ListView<String> listEmployeesRole;
     @FXML private ListView<LocalDate> listEmployeesJoinDate;
@@ -46,6 +48,21 @@ public class EmployeeListController {
         listEmployeesJoinDate.setItems(FXCollections.observableList(join_date));
         listEmployeesJoinDate.setEditable(false);
         listEmployeesJoinDate.setVisible(true);
+    }
+
+    @FXML
+    public void searchByEmployeeName() {
+        EmployeeCollection ec = new EmployeeCollection();
+        String input = txtSearchBar.getText();
+        for(Employee e : ec.getEmployees()) {
+            if(!e.getName().equals(input)) {
+                listEmployeesJoinDate.setEditable(true);
+                ec.getEmployees().remove(e);
+
+                listEmployeesJoinDate.refresh();
+                listEmployeesJoinDate.setEditable(false);
+            }
+        }
     }
 
 }

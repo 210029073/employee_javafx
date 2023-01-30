@@ -6,10 +6,11 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.first.employee.EmployeeListController">
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.first.employee.EmployeeListController">
    <children>
       <MenuBar>
         <menus>
@@ -30,6 +31,12 @@
           </Menu>
         </menus>
       </MenuBar>
+      <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <TextField fx:id="txtSearchBar" prefWidth="500.0" promptText="Enter a name" />
+            <Button mnemonicParsing="false" onMouseClicked="#searchByEmployeeName" text="Search" />
+         </children>
+      </HBox>
       <HBox alignment="TOP_RIGHT" spacing="5.0">
          <children>
             <ListView fx:id="listEmployeesRole" />
