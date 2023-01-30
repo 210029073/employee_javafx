@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-final class EmployeeDatabaseConnection<E> {
+final class EmployeeDatabaseConnection {
     private final String urlDBConnection;
     private final String username;
     private final String password;

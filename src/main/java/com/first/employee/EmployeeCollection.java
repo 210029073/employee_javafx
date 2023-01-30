@@ -1,16 +1,12 @@
 package com.first.employee;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeCollection {
-    private ArrayList<Employee> employees;
+    private List<Employee> employees;
 
-    public EmployeeCollection(ArrayList<Employee> employees) {
+    public EmployeeCollection(List<Employee> employees) {
         this.employees = employees;
         this.populateEmployeeCollection();
     }
@@ -24,10 +20,10 @@ public class EmployeeCollection {
 //        Connection connection = db.getConnection();
 //        System.out.println("Database has been successfully connected!");
 
-        this.employees = (ArrayList<Employee>) db.getResults();
+        this.employees = db.getResults();
     }
 
-    public ArrayList<Employee> getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 }
