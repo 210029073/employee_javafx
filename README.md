@@ -21,11 +21,19 @@ CREATE TABLE employee(
 ) 
 </code>
 
+### Eclipse Users
+There should be an option called <code>employee_javafx</code> in <code>Run -> Run Configuration</code> in Maven Build for running the JavaFX GUI on Eclipse.
+
+### IntellIJ Users
+There should be an option in Run Configurations called <code>Run Employee App</code> for those that are running IntelliJ.
+
 For Microsoft Windows users it should just work without any errors when running javafx:run when running it via the Plugins section from Maven tab in IntelliJ.
 
 Or javafx:run in run configurations for running Maven script via Eclipse.
 
 ## Important Note for macOS/Linux Users
+If for some reason that the Employee App does not work within Eclipse or Intellij simply do the following:
+
 - May not work correctly in Linux/macOS when running the project in Eclipse or IntelliJ
 - May involve you to install Maven from your dependency package manager.
 - For Debian/Ubuntu Linux users simply run <code>sudo apt install maven</code> on your terminal.
