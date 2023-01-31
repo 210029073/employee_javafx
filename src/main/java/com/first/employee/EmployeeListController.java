@@ -141,7 +141,28 @@ public class EmployeeListController {
 
         Scene scene = new Scene(vbox, 300, 150);
         stage.setScene(scene);
-        stage.show();
+        stage.showAndWait();
+    }
+
+    @FXML
+    public void addRecord() {
+        Stage stage = new Stage();
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.setTitle("About");
+        stage.setResizable(false);
+
+        VBox vbox = new VBox();
+
+        String msg = "Coming soon...";
+
+        Label lblMsg = new Label(msg);
+        lblMsg.textAlignmentProperty().set(TextAlignment.CENTER);
+        lblMsg.setPadding(new Insets(10,10,10,10));
+
+        vbox.getChildren().add(lblMsg);
+
+        Scene scene = new Scene(vbox, 300, 150);
+        stage.setScene(scene);
         stage.showAndWait();
     }
 
