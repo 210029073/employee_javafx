@@ -21,6 +21,10 @@ CREATE TABLE employee(
 ) 
 </code>
 
+For Microsoft Windows users it should just work without any errors when running javafx:run when running it via the Plugins section from Maven tab in IntelliJ.
+
+Or javafx:run in run configurations for running Maven script via Eclipse.
+
 ## Important Note for macOS/Linux Users
 - May not work correctly in Linux/macOS when running the project in Eclipse or IntelliJ
 - May involve you to install Maven from your dependency repository manager.
