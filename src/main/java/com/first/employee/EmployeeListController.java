@@ -148,7 +148,9 @@ public class EmployeeListController {
     public void addRecord() {
         Stage stage = new Stage();
         stage.initModality(Modality.WINDOW_MODAL);
-        stage.setTitle("About");
+        stage.setWidth(500);
+        stage.setHeight(300);
+        stage.setTitle("Adding a new Employee Record");
         stage.setResizable(false);
 
         VBox vbox = new VBox();
