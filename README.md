@@ -4,10 +4,11 @@ An Employee GUI app created using JavaFX with search capabilities, and is able t
 ## Requirements 
 - Java JDK 11 or later.
 - Eclipse IDE (Though it is recommeneded to use IntelliJ)
+- IntellIJ Community Edition or Ultimate Edition (Will work on both)
 - MySQL version 8.0.28 or later.
 
 ## Setup
-For setting up the database, please make sure that your database configuration and credentials matches <code>EmployeeDatabaseCollection.java</code> by making changes to the <code>EmployeeDatabaseCollection.java</code> class from <code>src/java/main/com/first/employee</code>.
+1) For setting up the database, please make sure that your database configuration and credentials matches <code>EmployeeDatabaseCollection.java</code> by making changes to the <code>EmployeeDatabaseCollection.java</code> class from <code>src/java/main/com/first/employee</code>.
 
 On MySQL simply type:
 <code>
@@ -20,6 +21,8 @@ CREATE TABLE employee(
   date_of_birth DATE
 ) 
 </code>
+
+2) Then import the project into either Eclipse or IntellJ.
 
 ### Eclipse Users
 There should be an option called <code>employee_javafx</code> in <code>Run -> Run Configuration</code> in Maven Build for running the JavaFX GUI on Eclipse.
