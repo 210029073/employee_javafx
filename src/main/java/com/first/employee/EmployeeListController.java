@@ -5,6 +5,9 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -62,17 +65,31 @@ public class EmployeeListController {
     public void searchByEmployeeName() {
         EmployeeCollection ec = new EmployeeCollection();
         String input = txtSearchBar.getText();
-
+        boolean isFound = false;
+        
         for(Employee e : ec.getEmployees()) {
             if(e.getName().equals(input)) {
                 updateList(e, input);
+                isFound = true;
+                break;
             } else if (e.getRole().equals(input)) {
                 updateList(e, input);
+                isFound = true;
+                break;
             }
             //handle error
             else {
-
+            	isFound = false;
             }
+        }
+        
+        if(!isFound) {
+        	Alert alert = new Alert(AlertType.ERROR, "Cannot find the employee specified in your search critiera", ButtonType.OK);
+        	alert.showAndWait();
+    		if(alert.getResult() == (ButtonType.OK)) {
+        		txtSearchBar.clear();
+        		alert.close();
+    		}
         }
 
     }
@@ -82,27 +99,23 @@ public class EmployeeListController {
         List<LocalDate> resultDate = new ArrayList<>();
         List<String> resultRole = new ArrayList<>();
 
-        if(!input.isEmpty() && e != null) {
-            listEmployeesName.setEditable(true);
-            result.add(e.getName());
-            listEmployeesName.setItems(FXCollections.observableList(result));
-            listEmployeesName.refresh();
-            listEmployeesName.setEditable(false);
+        listEmployeesName.setEditable(true);
+        result.add(e.getName());
+        listEmployeesName.setItems(FXCollections.observableList(result));
+        listEmployeesName.refresh();
+        listEmployeesName.setEditable(false);
 
-            listEmployeesJoinDate.setEditable(true);
-            resultDate.add(e.getJoin_date());
-            listEmployeesJoinDate.setItems(FXCollections.observableList(resultDate));
-            listEmployeesJoinDate.refresh();
-            listEmployeesJoinDate.setEditable(false);
+        listEmployeesJoinDate.setEditable(true);
+        resultDate.add(e.getJoin_date());
+        listEmployeesJoinDate.setItems(FXCollections.observableList(resultDate));
+        listEmployeesJoinDate.refresh();
+        listEmployeesJoinDate.setEditable(false);
 
-            listEmployeesRole.setEditable(true);
-            resultRole.add(e.getRole());
-            listEmployeesRole.setItems(FXCollections.observableList(resultRole));
-            listEmployeesRole.refresh();
-            listEmployeesRole.setEditable(false);
-        }
-
-        throw new IllegalStateException("An error occurred when updating the records.");
+        listEmployeesRole.setEditable(true);
+        resultRole.add(e.getRole());
+        listEmployeesRole.setItems(FXCollections.observableList(resultRole));
+        listEmployeesRole.refresh();
+        listEmployeesRole.setEditable(false);
     }
 
     @FXML
