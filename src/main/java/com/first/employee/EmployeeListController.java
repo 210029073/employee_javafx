@@ -84,8 +84,10 @@ public class EmployeeListController {
         }
         
         if(!isFound) {
-        	Alert alert = new Alert(AlertType.ERROR, "Cannot find the employee specified in your search critiera", ButtonType.OK);
-        	alert.showAndWait();
+        	Alert alert = new Alert(AlertType.ERROR, "Cannot find the employee specified in your search criteria.", ButtonType.OK);
+        	alert.setTitle("Error: Cannot find employee");
+            alert.setHeaderText("Cannot find employee");
+            alert.showAndWait();
     		if(alert.getResult() == (ButtonType.OK)) {
         		txtSearchBar.clear();
         		alert.close();

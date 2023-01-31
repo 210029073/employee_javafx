@@ -18,7 +18,7 @@ public class EmployeeComponent extends Application  {
 //            l.setController(new EmployeeListController());
             VBox root = l.load();
 
-            Scene scene = new Scene(root, 750,300);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("List Employees");
             stage.setResizable(false);
