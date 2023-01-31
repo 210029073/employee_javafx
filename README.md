@@ -1,4 +1,4 @@
-# employee_javafx
+# Employee GUI App
 An Employee GUI app created using JavaFX with search capabilities, and is able to retrieve employee details from the database.
 
 ## Requirements 
