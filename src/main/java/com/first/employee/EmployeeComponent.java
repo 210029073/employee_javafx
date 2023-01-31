@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class EmployeeComponent extends Application {
+public class EmployeeComponent extends Application  {
 
     @Override
     public void start(Stage stage) {
@@ -31,6 +31,7 @@ public class EmployeeComponent extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
+//        System.out.println("Testing 1234");
     }
 }

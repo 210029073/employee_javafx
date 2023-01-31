@@ -39,6 +39,7 @@ public class Employee {
         this.role = role;
     }
 
+    @Override
     public String toString() {
         return "Name: " + getName() + "\tRole: " + getRole() + "\tJoined Us Since: " + getJoin_date() + "\tDOB: " + getDate_of_birth();
     }
