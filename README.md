@@ -2,7 +2,7 @@
 An Employee GUI app created using JavaFX with search capabilities, and is able to retrieve employee details from the database.
 
 ## Requirements 
-- Java JDK 17 or later.
+- Java JDK 11 or later.
 - Eclipse IDE (Though it is recommeneded to use IntelliJ)
 - MySQL version 8.0.28 or later.
 
