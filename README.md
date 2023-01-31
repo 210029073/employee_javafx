@@ -29,5 +29,6 @@ Or javafx:run in run configurations for running Maven script via Eclipse.
 - May not work correctly in Linux/macOS when running the project in Eclipse or IntelliJ
 - May involve you to install Maven from your dependency repository manager.
 - For Debian/Ubuntu Linux users simply run <code>sudo apt install maven</code> on your terminal.
+- For macOS please install Maven from brew or whichever dependency repository manager supported for macOS.
 - **PLEASE NOTE THAT THIS HAS BEEN TRIED ON Ubuntu 22.04 LTS**
 - Then browse to the project directory and run <code>mvn javafx:run</code>
