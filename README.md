@@ -37,7 +37,6 @@ Or javafx:run in run configurations for running Maven script via Eclipse.
 ## Important Note for macOS/Linux Users
 If for some reason that the Employee App does not work within Eclipse or Intellij simply do the following:
 
-- May not work correctly in Linux/macOS when running the project in Eclipse or IntelliJ
 - May involve you to install Maven from your dependency package manager.
 - For Debian/Ubuntu Linux users simply run <code>sudo apt install maven</code> on your terminal.
 - For macOS please install Maven from brew or whichever dependency package manager supported for macOS.
