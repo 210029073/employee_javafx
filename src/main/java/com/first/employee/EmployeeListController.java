@@ -3,7 +3,9 @@ package com.first.employee;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -16,6 +18,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -146,26 +149,28 @@ public class EmployeeListController {
 
     @FXML
     public void addRecord() {
-        Stage stage = new Stage();
-        stage.initModality(Modality.WINDOW_MODAL);
-        stage.setWidth(500);
-        stage.setHeight(300);
-        stage.setTitle("Adding a new Employee Record");
-        stage.setResizable(false);
+        FXMLLoader l = new FXMLLoader();
+        l.setLocation(getClass().getResource("/com.first.employee/addEmployee.fxml"));
+        final EmployeeAddController employeeAddController = new EmployeeAddController();
 
-        VBox vbox = new VBox();
+        try {
+            Stage stage = new Stage();
 
-        String msg = "Coming soon...";
+            Parent parent = l.load();
+            l.setController(employeeAddController);
 
-        Label lblMsg = new Label(msg);
-        lblMsg.textAlignmentProperty().set(TextAlignment.CENTER);
-        lblMsg.setPadding(new Insets(10,10,10,10));
+            l.setRoot(parent);
 
-        vbox.getChildren().add(lblMsg);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setResizable(false);
 
-        Scene scene = new Scene(vbox, 300, 150);
-        stage.setScene(scene);
-        stage.showAndWait();
+            Scene scene = new Scene(parent);
+            stage.setScene(scene);
+            stage.showAndWait();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
