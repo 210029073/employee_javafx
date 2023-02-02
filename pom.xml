@@ -9,7 +9,7 @@
     <version>1.0</version>
 
     <properties>
-        <!-- For the purpose of backwards compatibility the Java app will be rendered in JDK version 11.-->
+        <!-- For the purpose of backwards compatibility the Java app will support JDK version 11.-->
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
