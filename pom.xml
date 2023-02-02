@@ -6,7 +6,7 @@
 
     <groupId>com.first</groupId>
     <artifactId>employee_app</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <properties>
         <!-- For the purpose of backwards compatibility the Java app will support JDK version 11.-->
