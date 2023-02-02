@@ -1,6 +1,12 @@
 package com.first.employee;
 
-import java.sql.*;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +82,29 @@ final class EmployeeDatabaseConnection {
         catch(SQLException e) {
             System.out.println("Database Failed to Connect: " + e.getMessage());
         }
+    }
+
+    public void addCustomerRecord(Employee employee) {
+         try {
+            Connection connection = DriverManager.getConnection(urlDBConnection, username, password);
+//            connection.nativeSQL("INSERT INTO employee(name, role, join_date, date_of_birth) VALUES (" +  employee.getName() + "," + employee.getRole() + "," + employee.getJoin_date() + ", " +employee.getDate_of_birth() + ")");
+//            connection.createStatement().executeUpdate("INSERT INTO employee_ (name, role, join_date, date_of_birth) + VALUES (" +  employee.getName() + "," + employee.getRole() + ","
+//                    + Date.valueOf(employee.getJoin_date())
+//                    + ", " + Date.valueOf(employee.getDate_of_birth()) + ")");
+
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO employee(`name`, `role`, join_date, date_of_birth, age)" + "VALUE (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, employee.getName());
+            statement.setString(2, employee.getRole());
+            statement.setObject(3, employee.getJoin_date());
+            statement.setObject(4 , employee.getDate_of_birth());
+            statement.setInt(5, LocalDate.now().getYear() - employee.getDate_of_birth().getYear());
+            statement.executeUpdate();
+            System.out.println("Successfully added a customer record!");
+         }
+
+         catch (SQLException e) {
+             System.out.println("Database has failed to add a new customer record: " + e.getMessage());
+         }
     }
 
     public List<Employee> getResults() {

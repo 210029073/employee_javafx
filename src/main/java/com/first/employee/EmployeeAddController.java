@@ -19,11 +19,22 @@ public class EmployeeAddController {
 
     @FXML
     public void btnConfirm() {
+
         System.out.println(employeeDOB.getValue());
+        Employee employee = new Employee(employeeName.getText(), employeeRole.getText(), employeeJoinDate.getValue(), employeeDOB.getValue());
+        EmployeeDatabaseConnection edc = new EmployeeDatabaseConnection();
+        edc.addCustomerRecord(employee);
+        doHouseKeepings();
     }
 
     @FXML
     public void btnClose() {
+        doHouseKeepings();
+        employeeName.getScene().getWindow().hide();
+    }
 
+    private void doHouseKeepings() {
+        employeeName.clear();
+        employeeRole.clear();
     }
 }

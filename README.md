@@ -1,6 +1,9 @@
 # Employee GUI App
 An Employee GUI app created using JavaFX with search capabilities, and is able to retrieve employee details from the database.
 
+
+Now supports adding employee details.
+
 ## Requirements 
 - Java JDK 11 or later.
 - Eclipse IDE (Though it is recommeneded to use IntelliJ)
