@@ -9,13 +9,16 @@
     <version>1.0</version>
 
     <properties>
+        <!-- For the purpose of backwards compatibility the Java app will be rendered in JDK version 11.-->
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Set JavaFX 17.0.1 for cross-platform compatibility, somehow in Windows it can run project in JavaFX version 17.0.2-->
         <javafx.version>17.0.1</javafx.version>
     </properties>
 
     <dependencies>
+        <!--JavaFX Dependencies-->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
