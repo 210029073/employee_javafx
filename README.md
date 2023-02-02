@@ -15,14 +15,22 @@ Now supports adding employee details.
 
 On MySQL simply type:
 <code>
+
 CREATE DATABASE Employee;
+
 CREATE TABLE employee(
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  role TEXT,
-  join_date DATE,
-  date_of_birth DATE
-) 
+
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  
+name VARCHAR(255) NOT NULL,
+  
+role TEXT,
+  
+join_date DATE,
+  
+date_of_birth DATE
+
+) ;
 </code>
 
 2) Then import the project into either Eclipse or IntellJ.
