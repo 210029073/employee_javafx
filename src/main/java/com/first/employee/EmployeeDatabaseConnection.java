@@ -21,7 +21,7 @@ final class EmployeeDatabaseConnection {
 
     private static EmployeeDatabaseConnection employeeDB;
 
-     EmployeeDatabaseConnection() {
+     private EmployeeDatabaseConnection() {
         this.urlDBConnection = "jdbc:mysql://localhost:3306/employee";
         this.username = "user";
         this.password = "1234";
@@ -46,15 +46,11 @@ final class EmployeeDatabaseConnection {
     }
 
     public Connection getConnection() {
-        try(
-                Connection connection = DriverManager.getConnection(urlDBConnection, username, password)
-        ) {
-            System.out.println("Query successfully been processed in transaction!");
-            return connection;
+        try {
+            return DriverManager.getConnection(urlDBConnection, username, password);
         }
-
-        catch(SQLException e) {
-            System.out.println("Database Failed to Connect: " + e.getMessage());
+        catch (SQLException e) {
+            e.printStackTrace();
         }
 
         return null;

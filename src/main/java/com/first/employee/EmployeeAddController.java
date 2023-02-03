@@ -22,7 +22,7 @@ public class EmployeeAddController {
 
         System.out.println(employeeDOB.getValue());
         Employee employee = new Employee(employeeName.getText(), employeeRole.getText(), employeeJoinDate.getValue(), employeeDOB.getValue());
-        EmployeeDatabaseConnection edc = new EmployeeDatabaseConnection();
+        EmployeeDatabaseConnection edc = EmployeeDatabaseConnection.getInstance();
         edc.addCustomerRecord(employee);
         doHouseKeepings();
     }
