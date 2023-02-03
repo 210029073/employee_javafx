@@ -56,7 +56,7 @@ final class EmployeeDatabaseConnection {
         return null;
     }
 
-
+    @Deprecated
     private void populateEmployeeCollection() {
         try {
             Connection connection = this.getConnection();
@@ -80,6 +80,7 @@ final class EmployeeDatabaseConnection {
         }
     }
 
+    @Deprecated
     public void addCustomerRecord(Employee employee) {
          try {
             Connection connection = DriverManager.getConnection(urlDBConnection, username, password);
@@ -103,6 +104,7 @@ final class EmployeeDatabaseConnection {
          }
     }
 
+    @Deprecated
     public List<Employee> getResults() {
         return results;
     }
