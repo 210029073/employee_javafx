@@ -19,6 +19,10 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,16 +73,25 @@ public class EmployeeListController {
         EmployeeCollection ec = new EmployeeCollection();
         String input = txtSearchBar.getText();
         boolean isFound = false;
-        
+        List<String> result = new ArrayList<>();
+        List<String> resultRole = new ArrayList<>();
+        List<LocalDate> resultDate = new ArrayList<>();
+
         for(Employee e : ec.getEmployees()) {
             if(e.getName().equals(input)) {
-                updateList(e, input);
+                //updateList(e, input);
+                result.add(e.getName());
+                resultRole.add(e.getRole());
+                resultDate.add(e.getJoin_date());
                 isFound = true;
-                break;
+                //break;
             } else if (e.getRole().equals(input)) {
-                updateList(e, input);
+                //updateList(e, input);
+                result.add(e.getName());
+                resultRole.add(e.getRole());
+                resultDate.add(e.getJoin_date());
                 isFound = true;
-                break;
+                //break;
             }
             //handle error
             else {
@@ -95,6 +108,23 @@ public class EmployeeListController {
         		txtSearchBar.clear();
         		alert.close();
     		}
+        }
+
+        else {
+            listEmployeesName.setEditable(true);
+            listEmployeesName.setItems(FXCollections.observableList(result));
+            listEmployeesName.refresh();
+            listEmployeesName.setEditable(false);
+
+            listEmployeesJoinDate.setEditable(true);
+            listEmployeesJoinDate.setItems(FXCollections.observableList(resultDate));
+            listEmployeesJoinDate.refresh();
+            listEmployeesJoinDate.setEditable(false);
+
+            listEmployeesRole.setEditable(true);
+            listEmployeesRole.setItems(FXCollections.observableList(resultRole));
+            listEmployeesRole.refresh();
+            listEmployeesRole.setEditable(false);
         }
 
     }

@@ -59,7 +59,7 @@ final class EmployeeDatabaseConnection {
 
     private void populateEmployeeCollection() {
         try {
-            Connection connection = DriverManager.getConnection(urlDBConnection, username, password);
+            Connection connection = this.getConnection();
             System.out.println("Database has been successfully connected!");
 
             ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM employee");

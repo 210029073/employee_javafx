@@ -22,8 +22,8 @@ public class EmployeeAddController {
 
         System.out.println(employeeDOB.getValue());
         Employee employee = new Employee(employeeName.getText(), employeeRole.getText(), employeeJoinDate.getValue(), employeeDOB.getValue());
-        EmployeeDatabaseConnection edc = EmployeeDatabaseConnection.getInstance();
-        edc.addCustomerRecord(employee);
+        EmployeeCollection ec = new EmployeeCollection();
+        ec.addCustomerRecord(employee);
         doHouseKeepings();
     }
 
@@ -36,5 +36,7 @@ public class EmployeeAddController {
     private void doHouseKeepings() {
         employeeName.clear();
         employeeRole.clear();
+        EmployeeListController elc = new EmployeeListController();
+//        elc.btnLoadOnClick();
     }
 }
