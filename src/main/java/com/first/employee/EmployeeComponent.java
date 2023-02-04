@@ -17,7 +17,6 @@ public class EmployeeComponent extends Application  {
             l.setLocation(EmployeeComponent.class.getResource("/com.first.employee/employee1.fxml"));
 //            l.setController(new EmployeeListController());
             VBox root = l.load();
-
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("List Employees");

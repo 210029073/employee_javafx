@@ -1,0 +1,8 @@
+.menu {
+    -fx-background-color: #909090;
+}
+.menu .item {
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+}
+

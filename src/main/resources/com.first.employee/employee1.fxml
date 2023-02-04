@@ -10,31 +10,35 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.first.employee.EmployeeListController">
    <children>
-      <MenuBar>
+      <MenuBar styleClass="menu" stylesheets="@menu.css">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" style="-fx-font-family: Arial;" styleClass="menu item" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" style="-fx-border-radius: 20;" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" style="-fx-font-family: Arial;" styleClass="menu item" text="Edit">
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" onAction="#openAboutUs" text="Help">
+          <Menu mnemonicParsing="false" onAction="#openAboutUs" style="-fx-font-family: Arial;" styleClass="menu item" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
-      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="5.0">
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #505050;">
          <children>
-            <Label text="Search for Employee" />
+            <Label style="-fx-text-fill: white;" text="Search for Employee">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Label>
             <TextField fx:id="txtSearchBar" prefWidth="500.0" promptText="Enter a name">
                <padding>
                   <Insets bottom="7.5" left="5.0" top="7.5" />
@@ -45,30 +49,42 @@
             <Button mnemonicParsing="false" onMouseClicked="#searchByEmployeeName" text="Search">
                <padding>
                   <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
-               </padding></Button>
+               </padding>
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Button>
          </children>
       </HBox>
-      <HBox alignment="TOP_RIGHT" spacing="5.0">
+      <HBox alignment="TOP_RIGHT" spacing="5.0" style="-fx-background-color: #505050;">
          <children>
             <ListView fx:id="listEmployeesRole" />
             <ListView fx:id="listEmployeesName" />
             <ListView fx:id="listEmployeesJoinDate" />
             <VBox prefWidth="100.0" spacing="5.0">
                <children>
-                  <Button minWidth="85.0" onAction="#btnLoadOnClick" prefWidth="85.0" text="Load">
+                  <Button alignment="CENTER" contentDisplay="CENTER" minWidth="85.0" onAction="#btnLoadOnClick" prefWidth="85.0" text="Load">
                      <padding>
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
                   </Button>
                   <Button alignment="CENTER" contentDisplay="RIGHT" minWidth="85.0" mnemonicParsing="false" onMouseClicked="#addRecord" prefWidth="80.0" text="Add" textAlignment="CENTER" wrapText="true">
                      <padding>
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
                   </Button>
                   <Button alignment="CENTER" contentDisplay="RIGHT" minWidth="85.0" mnemonicParsing="false" onMouseClicked="#onClose" prefWidth="80.0" text="Close" textAlignment="CENTER" wrapText="true">
                      <padding>
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
                   </Button>
                </children>
                <HBox.margin>
